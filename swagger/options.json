@@ -1,0 +1,95 @@
+{
+  "definition": {
+    "openapi": "3.0.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Blog Api - FS",
+      "description": "Blog api",
+      "termsOfService": "http://www.ibrsec.com",
+      "contact": {
+        "name": "ibrsec",
+        "email": "ibr.seckin@gmail.com"
+      },
+      "license": {
+        "name": "ISC Licence"
+      }
+    },
+    "servers": [
+      {
+        "url": "http://localhost:2000"
+      }
+    ],
+    "components": {
+      "schemas": {
+        "BlogCategory": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Name of the blog category",
+              "example": "Technology"
+            }
+          },
+          "required": ["name"]
+        },
+        "BlogPost": {
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "string",
+              "description": "User ID associated with the blog post"
+            },
+            "categoryId": {
+              "type": "string",
+              "description": "Category ID associated with the blog post"
+            },
+            "title": {
+              "type": "string",
+              "description": "Title of the blog post",
+              "example": "Introduction to MongoDB"
+            },
+            "content": {
+              "type": "string",
+              "description": "Content of the blog post"
+            }
+          },
+          "required": ["userId", "categoryId", "title", "content"]
+        },
+        "User": {
+          "type": "object",
+          "required": ["username", "email", "password"],
+          "properties": {
+            "username": {
+              "type": "string",
+              "description": "Username of the user"
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "description": "Email address of the user"
+            },
+            "password": {
+              "type": "string",
+              "description": "Password of the user"
+            }
+          },
+          "example": {
+            "username": "john_doe",
+            "email": "john.doe@example.com",
+            "password": "mySecurePassword123!"
+          }
+        }
+      }
+    }
+  },
+
+  "apis": ["./index.js", "./src/controllers/*.js"],
+  "securityDefinitions": {
+    "BearerAuth": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "description": "Use Bearer Authentication with a valid access token"
+    }
+  }
+}
