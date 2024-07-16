@@ -7,7 +7,7 @@ const express = require('express');
 const validateToken = require('./src/middlewares/validateTokenhandler');
 const app = express();
 
-
+ 
 //* -----------| -Swagger- |-----------
 
 // import swagger ui module and swagger json file
