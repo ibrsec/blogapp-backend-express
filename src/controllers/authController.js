@@ -270,10 +270,68 @@ module.exports.authController = {
 
   current: async (req, res) => {
     res.status(200).json({
-        errr:false,
+        error:false,
         message:"Login is going on!",
         username:req.username,
         accessToken:req.accessToken,
+    });
+  },
+
+  /**
+ * @swagger
+ * /users:
+ *   get:
+ *     summary: Retrieve a list of users
+ *     description: Retrieve a list of users from the database. Returns an array of user objects.
+ *     tags:
+ *       - Users
+ *     responses:
+ *       200:
+ *         description: A list of users.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: boolean
+ *                   example: false
+ *                 message:
+ *                   type: string
+ *                   example: Users are listed!
+ *                 result:
+ *                   type: array
+ *                   items:
+ *                    $ref: '#/components/schemas/User'
+ *       500:
+ *         description: Server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 errr:
+ *                   type: boolean
+ *                   example: true
+ *                 message:
+ *                   type: string
+ *                   example: An error occurred while retrieving users.
+ */
+getUsers: async (req, res) => {
+  const users = await User.find();
+  res.status(200).json({
+      errr: false,
+      message: "Users are listed!",
+      result: users,
+  });
+},
+
+  getUsers: async (req, res) => {
+    const users = await User.find();
+    res.status(200).json({
+        error:false,
+        message:"Users are listed!",
+        result:users,
     });
   },
 };
