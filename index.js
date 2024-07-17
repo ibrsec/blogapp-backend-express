@@ -24,7 +24,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
 //* -----------| -middlewares- |-----------
 app.use(express.json())
-app.use(cors({origin:"https://blogapp-backend-express.vercel.app/"}));
+app.use(cors());
 
 //* -----------| -DB Connection- |-----------
 require('./src/config/db')()
