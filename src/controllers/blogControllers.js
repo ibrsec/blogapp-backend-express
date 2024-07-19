@@ -247,6 +247,8 @@ module.exports.blogCategoryController = {
  *     summary: Delete a blog category by ID
  *     tags:
  *       - Categories
+ *     security:
+ *       - BearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -368,6 +370,8 @@ module.exports.blogPostController = {
  *     summary: Create a new blog post
  *     tags:
  *       - Blogs
+ *     security:
+ *       - BearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -573,6 +577,8 @@ module.exports.blogPostController = {
  *     summary: Update a blog post by ID
  *     tags:
  *       - Blogs
+ *     security:
+ *       - BearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -700,6 +706,8 @@ module.exports.blogPostController = {
  *     summary: Delete a blog post by ID
  *     tags:
  *       - Blogs
+ *     security:
+ *       - BearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id

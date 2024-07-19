@@ -16,9 +16,6 @@
     },
     "servers": [
       {
-        "url": "http://localhost:2000"
-      },
-      {
         "url": "https://blogapp-backend-express.vercel.app/"
       }
     ],
@@ -85,14 +82,13 @@
       }
     }
   },
-
   "apis": ["./index.js", "./src/controllers/*.js"],
   "securityDefinitions": {
-    "BearerAuth": {
+    "Bearer": {
+      "in": "header",
       "type": "apiKey",
       "name": "Authorization",
-      "in": "header",
-      "description": "Use Bearer Authentication with a valid access token"
+      "description": "JWT Authentication * Example: <b>Bearer ...accessToken...</b>"
     }
   }
 }
