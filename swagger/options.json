@@ -79,16 +79,21 @@
             "password": "mySecurePassword123!"
           }
         }
+      },
+      "securitySchemes": {
+        "BearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT",
+          "description": "JWT Authorization header using the Bearer scheme."
+        }
       }
-    }
+    },
+    "security": [
+      {
+        "BearerAuth": []
+      }
+    ]
   },
-  "apis": ["./index.js", "./src/controllers/*.js"],
-  "securityDefinitions": {
-    "Bearer": {
-      "in": "header",
-      "type": "apiKey",
-      "name": "Authorization",
-      "description": "JWT Authentication * Example: <b>Bearer ...accessToken...</b>"
-    }
-  }
+  "apis": ["./index.js", "./src/controllers/*.js"]
 }
