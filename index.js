@@ -19,7 +19,7 @@ const options = require('./swagger/options.json');
 const swaggerSpecs = swJsonDoc(options);
 
 // add route for swagger document API
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
+app.use("/api-doc", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
 
 //* -----------| -middlewares- |-----------

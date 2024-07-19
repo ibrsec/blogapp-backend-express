@@ -17,6 +17,9 @@
     "servers": [
       {
         "url": "http://localhost:2000"
+      },
+      {
+        "url": "https://blogapp-backend-express.vercel.app/"
       }
     ],
     "components": {
