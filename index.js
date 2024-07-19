@@ -3,6 +3,8 @@
 const cors = require('cors')
 require('dotenv').config();
 require('express-async-errors') 
+const path = require('path');
+
 const express = require('express');
 const validateToken = require('./src/middlewares/validateTokenhandler');
 const app = express();
@@ -20,7 +22,7 @@ const swaggerSpecs = swJsonDoc(options);
 
 // add route for swagger document API
 app.use("/api-doc", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
-
+app.use('/swagger', express.static(path.join(__dirname, 'node_modules', 'swagger-ui-dist')));
 
 //* -----------| -middlewares- |-----------
 app.use(express.json())
