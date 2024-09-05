@@ -25,7 +25,7 @@
     ·
     <a href="https://github.com/ibrsec/blogapp-backend-express/issues">Report Bug</a>
     ·
-    <a href="https://github.com/ibrsec/blogapp-backend-express/issues">Request Feature</a>
+    <a href="https://github.com/ibrsec/blogapp-backend-express/issues">Request Feature</a> 
   </p>
 </div>
 
